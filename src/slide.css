@@ -1,0 +1,106 @@
+.bottle:hover{
+   opacity: 0.3;
+}
+.slide:hover{
+    transform: translate(-150px);
+    transition: transform 0.3s ease;
+}
+.slide:hover + .slide1 {
+    transform: translate(150px);
+    transition: transform 0.3s ease;
+}
+.slide2{
+    transform: translate(0);
+    transition: transform 0.3s ease;
+}
+.slide3{
+    transform: translate(0);
+    transition: transform 0.3s ease;
+}
+.mobileSlide{
+    transform: translateY(310px);
+    transition: transform 0.3s ease;
+}
+.mobileSlide2{
+    transform: translateY(0px);
+    transition: transform 0.3s ease;
+}
+.shakeit {
+    animation: shakeit 0.5s infinite ease; 
+}
+
+@keyframes shakeit {
+    0% {
+        transform: translateX(0); 
+    }
+    25% {
+        transform: translateX(-5px); 
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0); 
+    }
+}
+.move{
+    transform: translate(-100px);
+    transition: transform 0.8s ease;
+}
+.moveRight{
+    transform: translate(400px);
+    transition: transform 0.8s ease;
+  
+}
+.moveagain{
+    transform: translate(-50px);
+    transition: transform 1.8s ease;
+   
+}
+.moveback{
+    transform: translate(400px);
+    transition: transform 1.8s ease;
+   
+}
+.moveoriginal{
+    transform: translate(0px);
+    transition: transform 1.8s ease;
+   
+}
+.ttt{
+    transform: translate(50px);
+    transition: transform 1.8s ease;
+}
+.ttty{
+    transform: translate(0px);
+    transition: transform 1.8s ease;
+}
+.shift{
+    transform: translateY(240px);
+    transition: transform 1.8s ease;
+}
+.shiftMobile{
+    transform: translateY(310px);
+    transition: transform 1.8s ease;
+}
+.shiftBack{
+    transform: translateY(0px);
+    transition: transform 1.8s ease;
+}
+.mobileSliding{
+    transform: translateY(350px);
+    transition: transform 0.8s ease;
+}
+.mobileSlidingBack{
+    transform: translateY(-40px);
+    transition: transform 0.8s ease;
+}
+.button{
+    background-color:"whitesmoke";
+                box-shadow:"0 0 10px lightgrey";
+                border-radius:10;
+                color:"black"
+}
