@@ -39,7 +39,7 @@ const shuffleArray = (arr) => {
 const MobileCards=({setDown})=>{
     const [open,setOpen]=useState(false);
     const[winner,setWinner]=useState("");
-    const {time,click,setTimeOver,crown}=useContext(context);
+    const {time,click,setTimeOver}=useContext(context);
     const[play,setPlay]=useState(false);
     const [start,setStart]=useState(false);
     const [elements,setElements] = useState([]);
@@ -180,6 +180,18 @@ const MobileCards=({setDown})=>{
 
                     }
                   }, [time, click]);
+
+            const checkDate=()=> {
+            var video = document.getElementById("myVideo");
+            if (time.timeLeftBday) {
+                video.pause();
+                alert("Please wait till 9th April");
+            } else {
+                video.controls = true;
+             
+            }
+        }
+                  
     return (
         <div style={{display:"flex",flexDirection:"column"}}>
         <div style={{position:"relative",display:"flex",justifyContent:"center"}}>
@@ -198,7 +210,7 @@ const MobileCards=({setDown})=>{
         </div>
         <div id="slide2" style={{...card,position:"absolute",zIndex:3}}>
         <div style={{...videoFile}}>
-            <video id="video-bg" style={{...videoFile}} controls>
+            <video id="myVideo" onPlay={()=>checkDate()} style={{...videoFile}} controls>
             <source src={birthdaywish} type="video/mp4"/>
             </video>
             <div style={{display:"flex",justifyContent:"center",fontSize:18,alignItems:"center",marginTop:7}}> Happy Birthday Anvi &nbsp;  <img style={{height:30,width:35,mixBlendMode:"multiply"}} src={cake} alt="emoji" /></div>

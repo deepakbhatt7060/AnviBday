@@ -87,6 +87,16 @@ useEffect(()=>{
         document.querySelector("#slide1").classList.add("slide2");
         document.querySelector("#trial").classList.add("slide3");
     }
+    const checkDate=()=> {
+        var video = document.getElementById("myVideo");
+        if (time.timeLeftBday) {
+            video.pause();
+            alert("Please wait till 9th April");
+        } else {
+            video.controls = true;
+         
+        }
+    }
     return(
         <div id="main" style={{position:"relative",display:"flex",justifyContent:"center",left:-50}}>
         <div id="slide1" onMouseOver={()=>handleSlideChange()} onMouseOut={()=>handleSlideBackChange()} style={{...card,backgroundColor:"#0D0D0D",zIndex:0,width:"45%",minWidth:500}}>
@@ -108,7 +118,7 @@ useEffect(()=>{
         </div>
         <div id="slide3" style={{...card,position:"absolute",marginLeft:"200px",zIndex:3}}>
         <div style={{...videoFile}}>
-            <video id="video-bg" style={{...videoFile}} controls>
+            <video id="myVideo" onPlay={()=>checkDate()} style={{...videoFile}} controls>
             <source src={birthdaywish} type="video/mp4"/>
             </video>
             <div style={{display:"flex",justifyContent:"center",fontSize:24,alignItems:"center",marginTop:7}}> Happy Birthday Anvi &nbsp;  <img style={{height:30,width:35,mixBlendMode:"multiply"}} src={cake} alt="emoji" /></div>
